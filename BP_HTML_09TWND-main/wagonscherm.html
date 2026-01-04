@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8">
+  <title>Wagonscherm</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      background: #000;
+      font-family: "Roboto Slab", serif;
+      color: #fff;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 40px auto;
+      background: #0b1970;
+      border-radius: 12px;
+      padding: 20px;
+    }
+
+    .header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 30px;
+    }
+
+    .header h1 {
+      margin: 0;
+    }
+
+    .wagons {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 16px;
+    }
+
+    .wagon {
+      border-radius: 10px;
+      padding: 14px;
+      text-align: center;
+    }
+
+    .wagon.green { background: #0a4f0a; }
+    .wagon.red { background: #8b0a0a; }
+
+    .wagon h2 {
+      margin-top: 0;
+    }
+
+    .badge {
+      background: #e6e6e6;
+      color: #000;
+      border-radius: 6px;
+      padding: 6px;
+      margin: 6px 0;
+      font-size: 14px;
+    }
+
+    .first {
+      background: #ffd200;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <h1>ANTWERPEN CENTRAAL</h1>
+      <div>
+        <strong>PERRON 5B</strong><br>
+        <strong>VERTREK 14:32</strong>
+      </div>
+    </div>
+
+    <div class="wagons">
+      <div class="wagon green">
+        <h2>WAGON 1</h2>
+        <div class="badge first">1e klas</div>
+        <div class="badge">Wifi</div>
+        <div class="badge">Restaurant</div>
+        <div class="badge">Bistro</div>
+      </div>
+
+      <div class="wagon red">
+        <h2>WAGON 2</h2>
+        <div class="badge">2e klas</div>
+        <div class="badge">Wifi</div>
+        <div class="badge">Stilte</div>
+      </div>
+
+      <div class="wagon red">
+        <h2>WAGON 3</h2>
+        <div class="badge">2e klas</div>
+        <div class="badge">Wifi</div>
+      </div>
+
+      <div class="wagon green">
+        <h2>WAGON 4</h2>
+        <div class="badge">2e klas</div>
+        <div class="badge">Wifi</div>
+        <div class="badge">Stilte</div>
+        <div class="badge">Fietsen</div>
+      </div>
+
+      <div class="wagon green">
+        <h2>WAGON 5</h2>
+        <div class="badge first">1e klas</div>
+        <div class="badge">Wifi</div>
+        <div class="badge">Stilte</div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

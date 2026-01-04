@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Lost In Tra(i)nslation</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+      /* Minor override to ensure the banner image covers cleanly */
+      .banner-bg { background-size: cover; background-position: center; }
+    </style>
+  </head>
+
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lost In Tra(i)nsition - Neon Future</title>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;900&family=Rajdhani:wght@300;500;700&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --neon-blue: #00f3ff;
+            --neon-pink: #ff00ff;
+            --bg-dark: #0a0b10;
+            --glass: rgba(255, 255, 255, 0.05);
+            --glass-border: rgba(255, 255, 255, 0.1);
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Rajdhani', sans-serif;
+            background-color: var(--bg-dark);
+            background-image: 
+                radial-gradient(circle at 20% 30%, rgba(0, 243, 255, 0.07) 0%, transparent 40%),
+                radial-gradient(circle at 80% 70%, rgba(255, 0, 255, 0.07) 0%, transparent 40%);
+            color: white;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .hero-title {
+            width: 100%;
+            text-align: center;
+            padding: 60px 0 20px 0;
+            font-family: 'Orbitron', sans-serif;
+            font-size: 7vw;
+            font-weight: 900;
+            text-transform: uppercase;
+            letter-spacing: 12px;
+            color: transparent;
+            -webkit-text-stroke: 1.5px var(--neon-blue);
+            filter: drop-shadow(0 0 15px var(--neon-blue));
+            margin: 0;
+        }
+
+        .pink-title {
+            -webkit-text-stroke: 1.5px var(--neon-pink);
+            filter: drop-shadow(0 0 15px var(--neon-pink));
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 40px 20px;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr); 
+            gap: 25px;
+            flex-grow: 1;
+        }
+
+        /* DOWNLOAD BUTTON STYLING */
+        .download-container {
+            grid-column: span 2;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .download-btn {
+            display: inline-block;
+            padding: 15px 30px;
+            background: transparent;
+            color: var(--neon-pink);
+            border: 2px solid var(--neon-pink);
+            font-family: 'Orbitron', sans-serif;
+            text-decoration: none;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            transition: 0.3s;
+            box-shadow: 0 0 10px rgba(255, 0, 255, 0.2);
+            cursor: pointer;
+        }
+
+        .download-btn:hover {
+            background: var(--neon-pink);
+            color: white;
+            box-shadow: 0 0 30px var(--neon-pink);
+            transform: translateY(-3px);
+        }
+
+        .week-card {
+            background: var(--glass);
+            backdrop-filter: blur(12px);
+            border: 1px solid var(--glass-border);
+            padding: 50px 20px;
+            text-align: center;
+            font-family: 'Orbitron', sans-serif;
+            font-size: 1.4rem;
+            letter-spacing: 2px;
+            color: white;
+            cursor: pointer;
+            transition: 0.4s;
+            clip-path: polygon(10% 0, 100% 0, 100% 85%, 90% 100%, 0 100%, 0 15%);
+        }
+
+        .week-card:hover {
+            border-color: var(--neon-blue);
+            box-shadow: 0 0 30px var(--neon-blue);
+            transform: scale(1.03);
+        }
+
+        #detail-page {
+            display: none;
+            max-width: 95%;
+            width: 1400px;
+            margin: 0 auto 60px auto;
+            padding: 60px;
+            background: rgba(0, 0, 0, 0.85);
+            border: 1px solid var(--neon-pink);
+            box-shadow: 0 0 80px rgba(255, 0, 255, 0.15);
+            clip-path: polygon(2% 0, 100% 0, 100% 98%, 98% 100%, 0 100%, 0 2%);
+        }
+
+        .intro-text {
+            font-size: 1.4rem;
+            line-height: 1.8;
+            color: #ddd;
+            max-width: 1100px;
+            margin: 0 auto 30px auto;
+            text-align: left;
+            white-space: pre-line;
+        }
+
+        .row-subtitle {
+            font-family: 'Orbitron', sans-serif;
+            color: var(--neon-blue);
+            font-size: 1.2rem;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            margin: 40px 0 20px 0;
+            border-bottom: 1px solid var(--glass-border);
+            padding-bottom: 10px;
+        }
+
+        .image-row {
+            display: flex;
+            flex-wrap: wrap; 
+            justify-content: flex-start;
+            gap: 20px;
+            margin-bottom: 40px;
+        }
+
+        .image-row img {
+            width: calc(33.33% - 14px); 
+            min-width: 280px; 
+            height: 300px; 
+            object-fit: contain; 
+            background: rgba(255, 255, 255, 0.02); 
+            border: 1px solid var(--neon-blue);
+            box-shadow: 0 0 20px rgba(0, 243, 255, 0.2);
+            transition: 0.3s;
+        }
+
+        .image-row img:hover {
+            transform: scale(1.05);
+            border-color: var(--neon-pink);
+            z-index: 10;
+        }
+
+        /* STUDENT INFO FOOTER */
+        .student-footer {
+            padding: 20px;
+            text-align: center;
+            font-family: 'Orbitron', sans-serif;
+            font-size: 0.9rem;
+            color: #888;
+            letter-spacing: 1px;
+            border-top: 1px solid var(--glass-border);
+            background: rgba(0, 0, 0, 0.3);
+            margin-top: auto;
+        }
+
+        .student-footer span {
+            color: var(--neon-blue);
+            margin: 0 10px;
+        }
+
+        /* NAVIGATIE ONDERAAN DETAIL */
+        .footer-nav {
+            margin-top: 60px;
+            padding-top: 40px;
+            border-top: 1px solid var(--glass-border);
+            text-align: center;
+        }
+
+        .week-nav-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 10px;
+            margin-bottom: 30px;
+        }
+
+        .nav-button {
+            background: rgba(255, 255, 255, 0.05);
+            color: white;
+            border: 1px solid var(--glass-border);
+            padding: 8px 15px;
+            font-family: 'Orbitron', sans-serif;
+            font-size: 0.8rem;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .nav-button:hover {
+            border-color: var(--neon-pink);
+            color: var(--neon-pink);
+            box-shadow: 0 0 10px var(--neon-pink);
+        }
+
+        .back-button {
+            display: block;
+            margin: 20px auto 0 auto;
+            background: transparent;
+            color: var(--neon-blue);
+            border: 1px solid var(--neon-blue);
+            padding: 15px 50px;
+            font-family: 'Orbitron', sans-serif;
+            cursor: pointer;
+            text-transform: uppercase;
+        }
+
+        .back-button:hover {
+            background: var(--neon-blue);
+            color: black;
+        }
+
+        @media (max-width: 900px) {
+            .container { grid-template-columns: 1fr; }
+            .download-container { grid-column: 1; }
+            .image-row { justify-content: center; }
+            .image-row img { width: 90%; height: auto; max-height: 400px; }
+        }
+    </style>
+</head>
+<body>
+
+    <h1 id="main-title" class="hero-title">Lost In Tra(i)nslation</h1>
+    <h1 id="week-hero-title" class="hero-title pink-title" style="display:none;"></h1>
+
+    <main class="container" id="grid-container">
+        <div class="download-container">
+            <a href="Dossier opdracht Lost In Tra(i)nslation.pdf" download class="download-btn">
+                Download Volledig Dossier
+            </a>
+        </div>
+
+        <div class="week-card" onclick="openWeek(1)">WEEK_01</div>
+        <div class="week-card" onclick="openWeek(2)">WEEK_02</div>
+        <div class="week-card" onclick="openWeek(3)">WEEK_03</div>
+        <div class="week-card" onclick="openWeek(4)">WEEK_04</div>
+        <div class="week-card" onclick="openWeek(5)">WEEK_05</div>
+        <div class="week-card" onclick="openWeek(6)">WEEK_06</div>
+        <div class="week-card" onclick="openWeek(7)">WEEK_07</div>
+        <div class="week-card" onclick="openWeek(8)">WEEK_08</div>
+        <div class="week-card" onclick="openWeek(9)">WEEK_09</div>
+        <div class="week-card" onclick="openWeek(10)">WEEK_10</div>
+    </main>
+
+    <section id="detail-page">
+        <div id="week-intro" class="intro-text"></div>
+        
+        <div id="subtitle-basis" class="row-subtitle">Basis Wireframes</div>
+        <div id="week-image-row-1" class="image-row"></div>
+        
+        <div id="subtitle-detail" class="row-subtitle">Gedetailleerde Uitwerking</div>
+        <div id="week-image-row-2" class="image-row"></div>
+        
+        <div class="footer-nav">
+            <div id="week-navigation" class="week-nav-container"></div>
+            <button class="back-button" onclick="goBack()">Terug naar homepage</button>
+        </div>
+    </section>
+
+    <footer class="student-footer">
+        Flor Van Looy <span>|</span> s173294 <span>|</span> 1GDM2
+    </footer>
+
+    <script>
+        const weekData = {
+            1: { 
+                titel: "Week 01: Low-fi Prototypes", 
+                uitleg: `Deze week zijn we begonnen met het uitwerken van onze low-fi wireframes. Voordat ik daadwerkelijk startte met schetsen, heb ik eerst voor mezelf opgeschreven welke informatie op het bord moest komen te staan en waar ik dus ruimte voor moest reserveren. 
+
+Tijdens dit proces bedacht ik veel verschillende ideeën, waarvan ik er uiteindelijk een aantal heb uitgewerkt. We werden uitgedaagd om creatief te denken en concepten te bedenken die anderen misschien niet direct zouden verzinnen. Zo kwam ik met ideeën als het toevoegen van een aftelklok op de schermen en het tonen van de weeromstandigheden op de borden.
+
+Nadat ik tevreden was met mijn schetsen, ben ik deze verder in detail gaan uitwerken door te doen alsof de schermen al volledig gevuld waren met informatie. Op deze manier kon ik beter beoordelen of de indeling goed werkte en ontdekken welke onderdelen ik in een latere fase eventueel nog wilde aanpassen.`, 
+                fotosBasis: ["Schets1.jpeg", "Schets2.jpeg", "Schets3.jpeg"],
+            },
+            2: { 
+                titel: "Week 02: Feedback & aanpassingen Low-fi", 
+                uitleg: `In week twee ontvingen we feedback op onze low-fi wireframes. Ik was over het algemeen tevreden met de opmerkingen die ik in het lokaal heb gekregen. Hoewel er enkele aanpassingen werden voorgesteld, was ik vooral positief verrast door de feedback op mijn aftelklok in de vorm van een diagram. Deze werd goed ontvangen, waardoor ik besloot dit element te behouden.
+
+Daarnaast kreeg ik feedback over de plaatsing van bepaalde informatie en de hoeveelheid ruimte tussen verschillende onderdelen. Op basis hiervan ben ik kritisch gaan kijken naar mogelijke verbeteringen. Deze heb ik doorgevoerd door mijn schetsen verder en gedetailleerd uit te werken. `, 
+                fotosDetail: ["Schetsdetail1.jpeg", "Schetsdetail2.jpeg", "Schetsdetail3.jpeg"]
+            },
+            3: { 
+                titel: "Week 03: Mid-fi Prototypes", 
+                uitleg: `In week drie hebben we onze gemaakte schetsen omgezet naar een Figma-bestand en zijn we gestart met het uitwerken van onze mid-fi prototypes. Ik begon met het aanmaken van drie verschillende selecties met de juiste afmetingen. Vanuit deze basis kon ik starten met het ontwerpen van mijn mid-fi prototypes.
+
+Het was mijn eerste kennismaking met Figma, maar ik merkte dat ik het programma vrij snel onder de knie kreeg. In het begin had ik nog moeite met het concept van components, maar gaandeweg begon ik dit beter te begrijpen. Bij mijn eerste ontwerpen heb ik bewust geëxperimenteerd met verschillende kleuren, om mijn mogelijkheden te verkennen en mijn ontwerpvrijheid zo groot mogelijk te houden.`, 
+                fotosBasis: ["Overzcihtenscherm1.jpeg", "Perronscherm1.jpeg", "Wagonscherm1.jpeg"],
+            },
+            4: { 
+                titel: "Week 04: Feedback & aanpassingen Figma", 
+                uitleg: `Tijdens week vier hebben we klassikaal feedback gekregen op de ontwerpen die we in Figma hadden gemaakt. De feedback richtte zich voornamelijk op gebruiksvriendelijkheid, leesbaarheid, kleurgebruik en de plaatsing van de informatie.
+
+Op basis van deze opmerkingen heb ik mijn ontwerpen kritisch herbekeken en ben ik op zoek gegaan naar andere kleuren die de schermen duidelijker en overzichtelijker maakten. Ik heb het kleurpalet aangepast en de positie van de informatie op de borden gewijzigd om de leesbaarheid te verbeteren. Daarnaast heb ik ook geëxperimenteerd met de kleur van het lettertype, zodat deze beter aansloot bij de behoeften van de gebruiker.
+
+Tijdens de les heb ik vervolgens extra feedback gevraagd aan de lectoren. Hieruit bleek dat de aanpassingen een duidelijke verbetering waren ten opzichte van de eerdere designs.`, 
+
+                fotosDetail: ["Overzichtschermdetail1.jpeg", "Perronschermdetail1.jpeg", "Wagonschermdetail2.jpeg"]
+            },
+            5: { 
+                titel: "Week 05: Visual Studio Code", 
+                uitleg: `In week vijf hebben we de basis van HTML en CSS verkend in Visual Studio Code. Dit deden we om inzicht te krijgen in de structuur van een webpagina en hoe inhoud wordt opgebouwd met behulp van markup. HTML werd gebruikt voor de structuur, zoals het opbouwen van een pagina met koppen, lijsten en afbeeldingen, en voor het begrijpen van de hiërarchie en samenhang tussen verschillende elementen.
+
+CSS werd ingezet om stijl toe te passen, zoals kleuren, lettertypes, marges en een eenvoudige lay-out. Omdat dit allemaal nieuw voor mij was, moest ik tijdens de lessen goed opletten om alles te kunnen volgen. Daarnaast ondervond ik ook problemen met mijn computer, wat het leerproces bemoeilijkte. Ik kreeg namelijk steeds een error die ik niet meteen opgelost kreeg. Hierdoor kon ik niet verder werken aan Tailwind en heb ik ervoor gekozen om verder te gaan met het uitwerken van mijn mid-fi prototypes in Figma.
+
+Tijdens dit proces heb ik mijn focus opnieuw gelegd op het gebruik van kleuren, ditmaal door voor alle drie de schermen dezelfde kleuren toe te passen. Om zeker te zijn dat de kleurencombinatie goed samenwerkt en gebruiksvriendelijk en leesbaar is voor de gebruiker, heb ik een website gebruikt om dit te controleren. Uit deze test bleek dat de gekozen kleurencombinatie de hoogst mogelijke beoordelingen behaalde.`, 
+
+                fotosDetail: ["overzichtscherm4.jpeg", "Perronscherm3.jpeg", "Wagonscherm3.jpeg"]
+            },
+            6: { 
+                titel: "Week 06: HTML, CSS & Prompten", 
+                uitleg: `Tijdens week zes waren we volledig bezig met HTML en CSS. We kregen de opdracht om onze schermontwerpen in ChatGPT te plaatsen en daarbij de volgende prompt toe te voegen: “Create 3 HTML files based on these screens that include CSS and the import of the fonts. The font is Roboto Slab.”
+
+Op basis van deze prompt genereerde ChatGPT zowel code als een visuele weergave van hoe de schermen eruit zouden kunnen zien. De gegenereerde versie kwam grotendeels overeen met wat ik zelf al had uitgewerkt en verschilde inhoudelijk niet heel veel. Dit bevestigde voor mij hoe belangrijk goed prompten is wanneer je met AI werkt.
+
+Daarnaast heb ik deze week met behulp van ChatGPT ook de hardnekkige error kunnen oplossen die ik eerder bleef tegenkomen tijdens het werken met HTML en CSS. Dit zorgde ervoor dat ik eindelijk vlotter verder kon werken aan mijn code.
+
+Gelukkig had ik al ervaring met prompten, aangezien ik hier vorig jaar al over heb geleerd en dit toen dagelijks moest toepassen. Hieronder is te zien wat ik uiteindelijk heb ontvangen.`,
+                fotosBasis: ["Chatgptoverzichtscherm.jpeg", "Chatgptperronscherm.jpeg", "Chatgptwagon.jpeg"]
+            },
+            7: {
+                titel: "Week 07: Herfstvakantie = bijwerken",
+                uitleg: `In week zeven was het herfstvakantie, waardoor ik de tijd heb genomen om verder te werken aan Tailwind CSS. Ik heb niet alleen mijn voortgang bijgewerkt, maar ook de CSS-styling in Visual Studio Code verder aangepast.
+
+Tijdens dit proces heb ik mijn volledige typografie herwerkt en het kleurgebruik verfijnd. Daarnaast heb ik ook de grids en de lay-out van elke pagina aangepast, zodat alles consistenter en overzichtelijker werd. Hieronder zie je enkele voorbeelden van de aanpassingen die ik heb gemaakt.`,
+                fotosBasis: ["weekpagina.jpeg", "weekpagina2.jpeg"]
+            },
+            8: {
+                titel: "Week 08: telefoon-schermen in Figma",
+                uitleg: `Tijdens week acht hebben we de drie schermen die we eerder hadden ontworpen omgezet naar een mobiele versie. Het doel was om de schermen interactief te maken en knoppen toe te voegen die in een latere fase daadwerkelijk zouden werken. Voor deze week lag de focus echter vooral op de visuele en structurele uitwerking.
+
+Ik heb mijn ontwerpen geplaatst binnen een fictief smartphonescherm, zodat ze meer aanvoelden als een echte app. Daarnaast heb ik het kleurgebruik licht aangepast en extra symbolen toegevoegd die zorgen voor bijkomende informatie en een betere gebruikerservaring. Hieronder zie je de resultaten van deze opdracht`,
+                fotosBasis: ["gsmoverzicht1.jpeg", "gsmoverzicht2.jpeg", "gsmperron1.jpeg", "gsmperron2.jpeg", "gsmwagon1.jpeg", "gsmwagon2.jpeg", "gsmwagon3.jpeg", "gsmwagon4.jpeg"]
+            },
+            9: {
+                titel: "Week 09: interactieve prototypes",
+                uitleg: `Tijdens week negen hebben we de schermen van de vorige week interactief gemaakt door knoppen en andere interactieve elementen in te stellen. Dit heb ik aangepakt door te werken met componenten en hier telkens verschillende varianten van aan te maken.
+
+Door het gebruik van componenten kon ik interacties zoals hover-, actieve- en geselecteerde states simuleren, wat zorgde voor een realistischer prototype. Dit maakte het mogelijk om eenvoudig tussen schermen te navigeren en verschillende gebruikers scenario’s te testen. Op deze manier kreeg ik een beter inzicht in de gebruikerservaring en kon ik controleren of de interacties logisch en intuïtief aanvoelden.`,
+                fotosBasis: ["interactive.jpeg"]
+            },
+            10: {
+                titel: "Week 10: Afronding",
+                uitleg: `Tijdens week tien heb ik de laatste openstaande onderdelen uit de voorgaande weken aangevuld en alles samengebracht tot één geheel. Ik heb mijn project nog eens grondig overlopen om te controleren of alle vereiste elementen aanwezig waren en correct uitgewerkt waren.
+
+Daarnaast heb ik opnieuw geëxperimenteerd met CSS om te onderzoeken of er alternatieve oplossingen of verbeteringen mogelijk waren op vlak van lay-out, typografie en kleurgebruik. Hierbij heb ik de consistentie tussen mijn Figma-ontwerpen en de HTML/CSS-uitwerking verder verfijnd.
+
+Ik heb mijn code opgeschoond, kleine fouten verbeterd en waar nodig aanpassingen gedaan op basis van eerdere feedback. Ook heb ik nagekeken of mijn ontwerp gebruiksvriendelijk, leesbaar en visueel samenhangend bleef over alle schermen en formaten heen. Door alles nog eens kritisch te herbekijken, kon ik het project afronden met een duidelijkere structuur en een sterker eindresultaat.`,
+            }
+        };
+
+        function openWeek(nr) {
+            const data = weekData[nr];
+            if(!data) return alert("Systeemmelding: Geen data gevonden voor deze periode.");
+
+            document.getElementById('main-title').style.display = 'none';
+            document.getElementById('grid-container').style.display = 'none';
+            
+            const weekTitle = document.getElementById('week-hero-title');
+            weekTitle.innerText = data.titel;
+            weekTitle.style.display = 'block';
+
+            document.getElementById('week-intro').innerText = data.uitleg;
+
+            // Rij 1
+            const row1 = document.getElementById('week-image-row-1');
+            const subBasis = document.getElementById('subtitle-basis');
+            row1.innerHTML = '';
+            if(data.fotosBasis && data.fotosBasis.length > 0) {
+                subBasis.style.display = 'block';
+                data.fotosBasis.forEach(foto => {
+                    row1.innerHTML += `<img src="${foto}" alt="Afbeelding">`;
+                });
+            } else {
+                subBasis.style.display = 'none';
+            }
+
+            // Rij 2
+            const row2 = document.getElementById('week-image-row-2');
+            const subDetail = document.getElementById('subtitle-detail');
+            row2.innerHTML = '';
+            if(data.fotosDetail && data.fotosDetail.length > 0) {
+                subDetail.style.display = 'block';
+                data.fotosDetail.forEach(foto => {
+                    row2.innerHTML += `<img src="${foto}" alt="Afbeelding">`;
+                });
+            } else {
+                subDetail.style.display = 'none';
+            }
+
+            const navContainer = document.getElementById('week-navigation');
+            navContainer.innerHTML = '';
+            
+            Object.keys(weekData).forEach(weekNr => {
+                if(parseInt(weekNr) !== nr) {
+                    const btn = document.createElement('button');
+                    btn.className = 'nav-button';
+                    btn.innerText = `Week ${weekNr.padStart(2, '0')}`;
+                    btn.onclick = () => openWeek(parseInt(weekNr));
+                    navContainer.appendChild(btn);
+                }
+            });
+
+            document.getElementById('detail-page').style.display = 'block';
+            window.scrollTo(0, 0);
+        }
+
+        function goBack() {
+            document.getElementById('main-title').style.display = 'block';
+            document.getElementById('grid-container').style.display = 'grid';
+            document.getElementById('week-hero-title').style.display = 'none';
+            document.getElementById('detail-page').style.display = 'none';
+        }
+    </script>
+</body>
+</html>

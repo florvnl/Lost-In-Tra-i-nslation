@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8">
+  <title>Perronscherm</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      background: #000;
+      font-family: "Roboto Slab", serif;
+    }
+
+    .panel {
+      width: 420px;
+      margin: 40px auto;
+      background: #0b1970;
+      border-radius: 12px;
+      padding: 20px;
+      color: #fff;
+    }
+
+    h1 {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    .train {
+      padding: 14px;
+      border-radius: 8px;
+      margin-bottom: 12px;
+    }
+
+    .green { background: #0a4f0a; }
+    .red { background: #8b0a0a; }
+
+    .destination {
+      font-size: 20px;
+      font-weight: 700;
+    }
+
+    .route {
+      font-size: 14px;
+      opacity: 0.9;
+    }
+
+    .info {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 6px;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+  <div class="panel">
+    <h1>PERRON 5</h1>
+
+    <div class="train green">
+      <div class="destination">Amsterdam Centraal</div>
+      <div class="route">Utrecht – Amsterdam – Haarlem – Schiphol</div>
+      <div class="info"><span>9:12</span><span>Op tijd</span></div>
+    </div>
+
+    <div class="train red">
+      <div class="destination">Den Haag Centraal</div>
+      <div class="route">Rotterdam – Delft</div>
+      <div class="info"><span>9:32</span><span>+2 min</span></div>
+    </div>
+
+    <div class="train red">
+      <div class="destination">Almere Centrum</div>
+      <div class="route">Hilversum – Weesp – Bijlmer Arena</div>
+      <div class="info"><span>9:54</span><span>+5 min</span></div>
+    </div>
+
+    <div class="train green">
+      <div class="destination">Amsterdam Centraal</div>
+      <div class="route">Utrecht – Amsterdam – Haarlem – Schiphol</div>
+      <div class="info"><span>10:12</span><span>Op tijd</span></div>
+    </div>
+
+    <div class="train green">
+      <div class="destination">Den Haag Centraal</div>
+      <div class="route">Rotterdam – Delft</div>
+      <div class="info"><span>10:32</span><span>Op tijd</span></div>
+    </div>
+  </div>
+</body>
+</html>
